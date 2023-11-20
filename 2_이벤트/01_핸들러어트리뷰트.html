@@ -1,0 +1,46 @@
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+
+            .box {
+                width: 100px;
+                height: 100px;
+                background: orange;
+                margin: 20px;
+            }
+            .box.red {
+                background: red;
+            }
+            .box.green {
+                background: yellowgreen;
+                font-size: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box", onclick="alert('첫 박스 클릭이요');"></div>
+        <div class="box red", onclick="withDouble();"></div>
+        <div class="box green", onmouseover="sayHello();", onmouseout="byeHello();"></div>
+
+        <script>
+            function withDouble() {
+                const $redBox = document.querySelector('.red'); // 태그 요소라서 변수명에 '$변수명' 이라 정의
+                $redBox.style.width = '200px';
+            }
+            // box green에 마우스 진입했을 때, 내부 텍스토 '안녕'이 추가되게 해주세요
+            function sayHello() {
+                const $greenBox = document.querySelector('.green');
+                $greenBox.textContent = "안녕";
+            }
+            function byeHello(){
+                const $greenBox = document.querySelector('.green');
+                $greenBox.textContent = "";
+            }
+        </script>
+    </body>
+</html>

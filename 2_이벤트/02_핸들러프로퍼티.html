@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- button#b$*3 -->
+        <button id="b1">클릭1</button>
+        <button id="b2">클릭2</button>
+        <button id="b3">클릭3</button>
+    </body>
+    <script>
+        // 버튼 3개에 대해서 변수에 저장
+        // 버튼 태그 3개를 리스트로 가져온 다음, 구조분해할당
+        const [$b1, $b2, $b3] = document.querySelectorAll("button");
+
+        // b1에 연동할 함수 선언
+        const sayHello = () => {
+            alert("안녕하세요");
+        }
+
+        // b1에 onclick 이벤트로 sayHello 함수 연결
+        console.log($b1); // 태그 형식이 나옴 
+        console.log("-----------------------------------------");
+        console.dir($b1); // 태그 내장 속성에 대한 객체가 나옴
+        $b1.onclick = sayHello;
+
+        // b2를 클릭 했을 때 배경색이 빨간색이 되는 함수를 선언 및 연결해주세요.
+        // $요소명.style.background = 'red';
+        const redBox = () => {
+            b2.style.background = 'red';
+        }
+        $b2.onclick = redBox;
+        console.dir($b2);
+    </script>
+</html>

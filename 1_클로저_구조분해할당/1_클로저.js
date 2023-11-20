@@ -20,9 +20,21 @@ function getVisitor() {
     function coutnVisitor() {
         return ++visitCount;
     }
+    // 클로저 미적용
+    // return coutnVisitor();
+    // 클로저 적용
     return coutnVisitor;
 }
 
+// 클로저 미 적용 코드 (getVisitor() 호출 시 마다 visitCount가 0으로 초기화 됨)
+// const countVisitor1 = getVisitor();
+// console.log(countVisitor1); // 1
+// const countVisitor2 = getVisitor();
+// console.log(countVisitor2); // 1
+// const countVisitor3 = getVisitor();
+// console.log(countVisitor3); // 1
+
+// 클로저 적용 코드 (getVisitor가 종료되어도 계속해서 visitCount의 값이 유지됨.)
 const countVisitor = getVisitor();
 console.log(countVisitor());
 console.log(countVisitor());

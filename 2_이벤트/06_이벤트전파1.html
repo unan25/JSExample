@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+
+            #fruits {
+                padding: 50px;
+                border: 2px solid red;
+            }
+            #fruits li {
+                background: yellow;
+                margin-bottom: 10px;
+            }
+    
+            #fruits li:first-child {
+                position: absolute;
+                bottom: 10%;
+                right: 5%;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="fruits">
+            <li class="apple">Apple</li>
+            <li class="banana">Banana</li>
+            <li class="grape">Grape</li>
+        </ul>
+
+        <script>
+            const $fruits = document.getElementById("fruits");
+
+            const $apple = $fruits.firstElementChild;
+            // = 같은 코드 const $apple = $fruits.getElementsByClassName("apple");
+
+            // 익명 화표 함수의 파라미터로 이벤트 지정
+            const clickEvent = e => {
+                console.log('ul의 클릭이벤트 발생!');
+                console.dir(e.target);
+                console.log(`${e.target.tagName} - 눌렀음!!!`);
+            }
+
+            // addEventListner로 클릭이벤트를 fruits에 등록
+            $fruits.addEventListener("click", clickEvent);
+
+            // apple에 핸들러 프로퍼티방식으로 apple을 클릭하면 alert을 띄우도록
+            $apple.onclick = e => {
+                console.log("apple 클릭이요");
+            }
+        </script>
+    </body>
+</html>

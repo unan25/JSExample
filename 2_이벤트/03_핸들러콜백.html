@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">클릭</button>
+
+    <script>
+        // 안녕 이라는 alert 띄워주는 핸들러 함수 정의
+        function hello(){
+            alert(" '안녕' 이라는 말은 ~ ...");
+        }
+
+        const $btn = document.getElementById("btn");
+
+        // btn에 대한 클릭 발생시 hello 함수 내부 실행문을 실행
+        $btn.addEventListener("click", hello);
+
+        // 익명함수로 버튼의 색을 아무거나 바꾸기
+        $btn.addEventListener("click", () => {
+            $btn.style.background = 'blue';
+        });
+
+        // 익명함수는 제거가 안되지만 기명함수는 제거 가능
+        // 어떤 조건 발동 시, 등록된 함수를 삭제할지 적어서 삭제 가능
+        $btn.removeEventListener("click", hello);
+    </script>
+</body>
+</html>
